@@ -1,6 +1,6 @@
 # Python password generator by @driconrikus
 # Ver 0.1
-
+import sys
 import random
 
 def generate_password():
@@ -20,9 +20,14 @@ def generate_password():
 
     # This variable will ask how long our password will be, it will print a warning if it's below 8 characters.
     complexity = input('Please select password length:\n')
-    if int(complexity) < 8:
-        print('Warning: Minimum length for a secure password is 8 characters.')
-
+    if complexity.isnumeric() == False:
+        print("Only numbers allowed.")
+        sys.exit()
+    else:
+        if int(complexity) < 8:
+            print('Warning: Minimum length for a secure password is 8 characters.')
+    
+    #This is where the magic happens
     for i in range(int(complexity)):
         character_random = random.choice(characters)
         password.append(character_random)
@@ -32,7 +37,7 @@ def generate_password():
 
 def run():
     password = generate_password()
-    print('Your new password is ' + password )
+    print('Your new password is: ' + password )
 
 
 if __name__ == '__main__':

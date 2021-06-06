@@ -27,7 +27,7 @@ def generate_password():
        sys.exit()
 
     if int(length) < 8:
-            print('Warning: Minimum length for a secure password is 8 characters.')
+            print('Warning: Minimum recommended length for a secure password is 8 characters.')
 
     #This is where the magic happens
     for i in range(int(length)):

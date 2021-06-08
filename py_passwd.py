@@ -5,12 +5,10 @@ from random import choices
 
 def generate_password():
     # Here is our pool where we will select the characters to create our password.
-    uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
-    'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
-    'S', 'T', 'U', 'V', 'X', 'Y', 'Z']
-    lowercase = [letter.lower() for letter in uppercase]
-    symbols = ['!', '@', '#', '$', '%', '&', '*']
-    numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+    uppercase = 'ABCDEFGHIJKLMNOPQRSTUVXYZ'
+    lowercase = uppercase.lower()
+    symbols =  '!@#$%&*'
+    numbers = '1234567890'
     characters = uppercase + lowercase + symbols + numbers
 
     # This variable will ask how long our password will be, it will print a warning if it's below 8 characters.
